@@ -42,6 +42,11 @@ dependencies {
     implementation Dependencies.APP_COMPAT
     implementation Dependencies.CONSTRAINT_LAYOUT
     implementation Dependencies.HILT
+    implementation Dependencies.OKHTTP
+    implementation Dependencies.OKHTTP_LOGGING
+    implementation Dependencies.RETROFIT
+    implementation Dependencies.GSON
+    implementation Dependencies.GSON_CONVERTER
     implementation AnnotationProcessing.HILT_COMPILER
 
     testImplementation 'junit:junit:4.+'

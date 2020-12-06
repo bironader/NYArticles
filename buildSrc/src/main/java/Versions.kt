@@ -9,4 +9,6 @@ object Versions {
     const val APP_COMPAT = "1.2.0"
     const val MATERIAL = "1.2.1"
     const val BUILD_TOOLS = "4.1.1"
+    const val OKHTTP = "3.14.0"
+    const val GSON = "2.8.6"
 }
