@@ -3,6 +3,8 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+
 }
 
 android {
@@ -19,6 +21,8 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         buildConfigField("String", "API_KEY", API_KEY)
+        buildConfigField("String", "BASE_URL", "\"https://api.nytimes.com/svc/mostpopular\"")
+
 
     }
 
@@ -28,6 +32,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    buildFeatures {
+        dataBinding = true
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -52,8 +60,15 @@ dependencies {
     implementation Dependencies.GSON_CONVERTER
     implementation Dependencies.TIMBER
     implementation Dependencies.STETHO
+    implementation Dependencies.MATERIAL
+    implementation Dependencies.NAV_FRAGMENT
+    implementation Dependencies.NAV_UI
+    implementation Dependencies.GLIDE
+    implementation Dependencies.LIFE_CYLCE_VIEWMODEL
+    implementation Dependencies.LIFE_CYLCE_EXT
     debugImplementation Dependencies.CHUCK
     kapt AnnotationProcessing.HILT_COMPILER
+    kapt AnnotationProcessing.GLIDE_COMPILER
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'

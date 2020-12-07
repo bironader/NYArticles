@@ -1,6 +1,7 @@
 package com.example.nyarticles.framework.injection
 
 import android.app.Application
+import com.example.nyarticles.BuildConfig
 import com.facebook.stetho.okhttp3.StethoInterceptor
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.Gson
@@ -27,7 +28,7 @@ class NetworkModule {
 
 
     private val baseUrl: String
-        get() = BuildConfig.SERVER_BASE_URL
+        get() = BuildConfig.BASE_URL
 
     @Provides
     @Singleton

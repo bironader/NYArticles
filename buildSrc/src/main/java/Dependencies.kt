@@ -15,5 +15,10 @@ object Dependencies {
     const val STETHO = "com.facebook.stetho:stetho-okhttp3:${Versions.STETHO}"
     const val TIMBER = "com.jakewharton.timber:timber:${Versions.TIMBER}"
     const val CHUCK = "com.readystatesoftware.chuck:library-no-op:${Versions.CHUCK}"
+    const val GLIDE = "com.github.bumptech.glide:glide:${Versions.GLIDE}"
+    const val NAV_FRAGMENT = "androidx.navigation:navigation-fragment-ktx:${Versions.NAV}"
+    const val NAV_UI = "androidx.navigation:navigation-ui-ktx:${Versions.NAV}"
+    const val LIFE_CYLCE_EXT = "androidx.lifecycle:lifecycle-extensions:${Versions.LIFECYCLE}"
+    const val LIFE_CYLCE_VIEWMODEL = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.LIFECYCLE}"
 
 }
