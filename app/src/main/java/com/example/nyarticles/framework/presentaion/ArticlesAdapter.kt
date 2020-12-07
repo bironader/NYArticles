@@ -2,6 +2,7 @@ package com.example.nyarticles.framework.presentaion
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.view.ViewCompat
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nyarticles.R
@@ -9,13 +10,14 @@ import com.example.nyarticles.business.entites.Article
 import com.example.nyarticles.databinding.ArticleItemBinding
 import com.example.nyarticles.framework.presentaion.ArticlesAdapter.ArticleHolder
 import com.example.nyarticles.framework.utils.GlideUtils
+import com.example.nyarticles.framework.utils.ItemClickListener
 import javax.inject.Inject
 
 class ArticlesAdapter @Inject constructor() : RecyclerView.Adapter<ArticleHolder>() {
 
     private var items = listOf<Article>()
 
-
+    lateinit var itemClickListener: ItemClickListener<Article>
     fun showItems(items: List<Article>) {
         this.items = items
         notifyDataSetChanged()
@@ -47,6 +49,11 @@ class ArticlesAdapter @Inject constructor() : RecyclerView.Adapter<ArticleHolder
                 binding.articleImg,
                 item.media[0].mediaMetadata.find { it.format == "mediumThreeByTwo210" }?.url
             )
+            binding.root.setOnClickListener {
+                itemClickListener.itemClick(
+                    item
+                )
+            }
         }
     }
 
