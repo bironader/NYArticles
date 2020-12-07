@@ -27,5 +27,6 @@ object Dependencies {
     const val COROUTINES = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.COROUTINES}"
     const val SWIPE_REFRESH =
         "androidx.swiperefreshlayout:swiperefreshlayout:${Versions.SWIPE_REFRESH}"
+    const val UtiLS = "com.blankj:utilcode:${Versions.UTILS}"
 
 }

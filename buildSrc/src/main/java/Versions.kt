@@ -20,5 +20,6 @@ object Versions {
     const val GLIDE = "4.11.0"
     const val SWIPE_REFRESH = "1.1.0"
     const val SAFE_ARGS = "2.3.2"
+    const val UTILS = "1.9.12"
 
 }

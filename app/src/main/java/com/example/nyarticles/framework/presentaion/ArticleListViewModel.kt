@@ -8,11 +8,12 @@ import com.example.nyarticles.business.entites.Resource
 import com.example.nyarticles.business.entites.Resource.*
 import com.example.nyarticles.business.entites.Result
 import com.example.nyarticles.business.usecases.GetArticleListUseCase
+import com.example.nyarticles.framework.utils.getType
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.lang.Exception
 
-class ArtcileListViewModel @ViewModelInject constructor(
+class ArticleListViewModel @ViewModelInject constructor(
     private val getArticleListUseCase: GetArticleListUseCase,
     @Assisted
     private val savedStateHandle: SavedStateHandle
@@ -27,11 +28,10 @@ class ArtcileListViewModel @ViewModelInject constructor(
         viewModelScope.launch(Dispatchers.IO)
         {
             _stateLiveData.postValue(Loading())
-            try {
-                _stateLiveData.postValue(Success(getArticleListUseCase.getArtcilesFromRepo()))
-            } catch (exception: Throwable) {
-                _stateLiveData.postValue(Failure(exception))
-            }
+            getArticleListUseCase.getArtcilesFromRepo(
+                onSuccess = { _stateLiveData.postValue(Success(it)) },
+                onFailed = { _stateLiveData.postValue(Failure(it.getType())) }
+            )
         }
 
     }

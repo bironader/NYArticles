@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">NYArticles</string>
     <string name="most_viewed">NY Times Most Popular</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="connection_failed">Connection Failed</string>
+    <string name="retry">Retry</string>
+    <string name="unknown_error">Unknown Error</string>
+    <style name="not_found">Not Found</style>
+
 </resources>

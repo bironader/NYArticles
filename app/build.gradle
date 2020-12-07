@@ -71,6 +71,7 @@ dependencies {
     implementation Dependencies.HILT_LIFE_CYCLE
     implementation Dependencies.COROUTINES
     implementation Dependencies.SWIPE_REFRESH
+    implementation Dependencies.UtiLS
     debugImplementation Dependencies.CHUCK
     releaseImplementation Dependencies.CHUCK_NO_OP
     kapt AnnotationProcessing.HILT_COMPILER

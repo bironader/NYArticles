@@ -10,6 +10,7 @@ import com.google.gson.reflect.TypeToken
 import retrofit2.HttpException
 import timber.log.Timber
 import java.net.ConnectException
+import java.net.UnknownHostException
 import java.util.concurrent.TimeoutException
 
 sealed class ErrorTypes {
@@ -22,6 +23,7 @@ sealed class ErrorTypes {
 fun Throwable.getType(): ErrorTypes =
     when (this) {
         is ConnectException -> NetworkError
+        is UnknownHostException -> NetworkError
         is HttpException -> HttpError(this)
         is TimeoutException -> TimeOut
         else -> UnKnown

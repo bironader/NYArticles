@@ -1,5 +1,7 @@
 package com.example.nyarticles.business.entites
 
+import com.example.nyarticles.framework.utils.ErrorTypes
+
 /**
  * Represents a network bound resource. Each subclass represents the resource's   state:
  * - [Loading]: the resource is being retrieved from network.
@@ -10,5 +12,5 @@ package com.example.nyarticles.business.entites
 sealed class Resource<out T> {
     class Loading<out T> : Resource<T>()
     data class Success<out T>(val data: T) : Resource<T>()
-    data class Failure<out T>(val throwable: Throwable) : Resource<T>()
+    data class Failure<out T>(val errorTypes: ErrorTypes) : Resource<T>()
 }
