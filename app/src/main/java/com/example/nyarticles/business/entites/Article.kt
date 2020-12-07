@@ -1,8 +1,11 @@
 package com.example.nyarticles.business.entites
 
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class Article(
     @SerializedName("abstract")
     val `abstract`: String = "",
@@ -12,8 +15,6 @@ data class Article(
     val assetId: Long = 0,
     @SerializedName("byline")
     val byline: String = "",
-    @SerializedName("column")
-    val column: Any = Any(),
     @SerializedName("eta_id")
     val etaId: Int = 0,
     @SerializedName("id")
@@ -40,4 +41,4 @@ data class Article(
     val uri: String = "",
     @SerializedName("url")
     val url: String = ""
-)
+) : Parcelable
