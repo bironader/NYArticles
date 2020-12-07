@@ -1,4 +1,4 @@
-package com.example.nyarticles.framework.injection
+package com.example.nyarticles.injection
 
 import android.app.Application
 import com.example.nyarticles.BuildConfig
@@ -39,6 +39,7 @@ class NetworkModule {
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create(provideGson()))
             .build()
+
     }
 
     @Provides
@@ -95,11 +96,7 @@ class NetworkModule {
     fun provideHeaderInterceptor(): Interceptor {
         return Interceptor { chain ->
             var request = chain.request()
-
-
             request = request.newBuilder()
-
-
                 .build()
             chain.proceed(request)
         }

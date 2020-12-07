@@ -20,7 +20,7 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         buildConfigField("String", "API_KEY", API_KEY)
-        buildConfigField("String", "BASE_URL", "\"https://api.nytimes.com/svc/mostpopular\"")
+        buildConfigField("String", "BASE_URL", "\"https://api.nytimes.com/svc/mostpopular/v2/\"")
 
 
     }
@@ -67,7 +67,10 @@ dependencies {
     implementation Dependencies.LIFE_CYLCE_EXT
     implementation Dependencies.LIVEDATA_EXT
     implementation Dependencies.HILT_LIFE_CYCLE
+    implementation Dependencies.COROUTINES
+    implementation Dependencies.SWIPE_REFRESH
     debugImplementation Dependencies.CHUCK
+    releaseImplementation Dependencies.CHUCK_NO_OP
     kapt AnnotationProcessing.HILT_COMPILER
     kapt AnnotationProcessing.HILT_LIFECYCLE_COMPLIER
     kapt AnnotationProcessing.GLIDE_COMPILER

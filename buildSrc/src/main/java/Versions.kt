@@ -16,6 +16,8 @@ object Versions {
     const val GSON = "2.8.6"
     const val STETHO = "1.5.1"
     const val TIMBER = "4.1.2"
-    const val CHUCK = "1.0.4"
+    const val CHUCK = "1.1.0"
     const val GLIDE = "4.11.0"
+    const val SWIPE_REFRESH  = "1.1.0"
+
 }

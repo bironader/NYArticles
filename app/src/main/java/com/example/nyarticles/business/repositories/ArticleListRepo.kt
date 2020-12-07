@@ -4,8 +4,8 @@ import com.example.nyarticles.framework.datasource.remote.abstraction.ArticlesLi
 import dagger.hilt.android.scopes.ActivityRetainedScoped
 import javax.inject.Inject
 
-class ArticleListRepo @Inject constructor(articlesListDataSource: ArticlesListDataSource) {
+class ArticleListRepo @Inject constructor(private val articlesListDataSource: ArticlesListDataSource) {
 
-
+    suspend fun fetchArticles() = articlesListDataSource.getArticles()
 
 }

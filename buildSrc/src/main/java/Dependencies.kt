@@ -15,7 +15,8 @@ object Dependencies {
     const val GSON_CONVERTER = "com.squareup.retrofit2:converter-gson:${Versions.RETROFIT}"
     const val STETHO = "com.facebook.stetho:stetho-okhttp3:${Versions.STETHO}"
     const val TIMBER = "com.jakewharton.timber:timber:${Versions.TIMBER}"
-    const val CHUCK = "com.readystatesoftware.chuck:library-no-op:${Versions.CHUCK}"
+    const val CHUCK = "com.readystatesoftware.chuck:library:${Versions.CHUCK}"
+    const val CHUCK_NO_OP = "com.readystatesoftware.chuck:library-no-op:${Versions.CHUCK}"
     const val GLIDE = "com.github.bumptech.glide:glide:${Versions.GLIDE}"
     const val NAV_FRAGMENT = "androidx.navigation:navigation-fragment-ktx:${Versions.NAV}"
     const val NAV_UI = "androidx.navigation:navigation-ui-ktx:${Versions.NAV}"
@@ -23,6 +24,8 @@ object Dependencies {
     const val LIFE_CYLCE_VIEWMODEL =
         "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.LIFECYCLE}"
     const val LIVEDATA_EXT = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.LIFECYCLE}"
-
+    const val COROUTINES = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.COROUTINES}"
+    const val SWIPE_REFRESH =
+        "androidx.swiperefreshlayout:swiperefreshlayout:${Versions.SWIPE_REFRESH}"
 
 }
