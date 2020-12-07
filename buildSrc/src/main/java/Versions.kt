@@ -18,6 +18,7 @@ object Versions {
     const val TIMBER = "4.1.2"
     const val CHUCK = "1.1.0"
     const val GLIDE = "4.11.0"
-    const val SWIPE_REFRESH  = "1.1.0"
+    const val SWIPE_REFRESH = "1.1.0"
+    const val SAFE_ARGS = "2.3.2"
 
 }
