@@ -11,4 +11,7 @@ object Versions {
     const val BUILD_TOOLS = "4.1.1"
     const val OKHTTP = "3.14.0"
     const val GSON = "2.8.6"
+    const val STETHO = "1.5.1"
+    const val TIMBER = "4.1.2"
+    const val CHUCK = "1.0.4"
 }

@@ -17,6 +17,9 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "API_KEY", API_KEY)
+
     }
 
     buildTypes {
@@ -47,7 +50,10 @@ dependencies {
     implementation Dependencies.RETROFIT
     implementation Dependencies.GSON
     implementation Dependencies.GSON_CONVERTER
-    implementation AnnotationProcessing.HILT_COMPILER
+    implementation Dependencies.TIMBER
+    implementation Dependencies.STETHO
+    debugImplementation Dependencies.CHUCK
+    kapt AnnotationProcessing.HILT_COMPILER
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
