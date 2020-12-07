@@ -1,11 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/main_nav_graph.xml"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph.xml"
     app:startDestination="@id/artcileListFragment">
 
     <fragment
-
         android:id="@+id/artcileListFragment"
         android:name="com.example.nyarticles.framework.presentaion.ArtcileListFragment"
-        android:label="@string/most_viewed" />
+        android:label="@string/most_viewed"
+        tools:layout="@layout/fragment_artcile_list">
+        <action
+            android:id="@+id/action_artcileListFragment_to_articalDetailsFragment"
+            app:destination="@id/articalDetailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/articalDetailsFragment"
+        android:name="com.example.nyarticles.framework.presentaion.ArticalDetailsFragment"
+        android:label="{title}"
+        tools:layout="@layout/fragment_artical_details">
+        <argument
+            android:name="article"
+            app:argType="com.example.nyarticles.business.entites.Article" />
+        <argument
+            android:name="title"
+            app:argType="string" />
+    </fragment>
 </navigation>
