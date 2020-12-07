@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">NYArticles</string>
+    <string name="most_viewed">NY Times Most Popular</string>
 </resources>

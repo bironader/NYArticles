@@ -7,6 +7,7 @@ object Dependencies {
     const val CONSTRAINT_LAYOUT =
         "androidx.constraintlayout:constraintlayout:${Versions.CONSTRAINT_LAYOUT}"
     const val HILT = "com.google.dagger:hilt-android:${Versions.HILT}"
+    const val HILT_LIFE_CYCLE = "androidx.hilt:hilt-lifecycle-viewmodel:${Versions.HILT_LIFECYCLE}"
     const val RETROFIT = "com.squareup.retrofit2:retrofit:${Versions.RETROFIT}"
     const val OKHTTP = "com.squareup.okhttp3:okhttp:${Versions.OKHTTP}"
     const val OKHTTP_LOGGING = "com.squareup.okhttp3:logging-interceptor:${Versions.OKHTTP}"
@@ -19,6 +20,9 @@ object Dependencies {
     const val NAV_FRAGMENT = "androidx.navigation:navigation-fragment-ktx:${Versions.NAV}"
     const val NAV_UI = "androidx.navigation:navigation-ui-ktx:${Versions.NAV}"
     const val LIFE_CYLCE_EXT = "androidx.lifecycle:lifecycle-extensions:${Versions.LIFECYCLE}"
-    const val LIFE_CYLCE_VIEWMODEL = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.LIFECYCLE}"
+    const val LIFE_CYLCE_VIEWMODEL =
+        "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.LIFECYCLE}"
+    const val LIVEDATA_EXT = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.LIFECYCLE}"
+
 
 }
