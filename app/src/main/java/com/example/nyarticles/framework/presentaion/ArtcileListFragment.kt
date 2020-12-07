@@ -1,6 +1,5 @@
-package com.example.nyarticles.framework.features.articles_list
+package com.example.nyarticles.framework.presentaion
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater

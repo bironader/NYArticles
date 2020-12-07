@@ -6,6 +6,6 @@
     <fragment
 
         android:id="@+id/artcileListFragment"
-        android:name="com.example.nyarticles.framework.features.articles_list.ArtcileListFragment"
+        android:name="com.example.nyarticles.framework.presentaion.ArtcileListFragment"
         android:label="@string/most_viewed" />
 </navigation>

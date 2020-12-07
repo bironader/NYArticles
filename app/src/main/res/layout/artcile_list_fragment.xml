@@ -9,7 +9,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".framework.features.articles_list.ArtcileListFragment">
+        tools:context=".framework.presentaion.ArtcileListFragment">
 
         <TextView
             android:layout_width="match_parent"

@@ -1,4 +1,4 @@
-package com.example.nyarticles.framework.features
+package com.example.nyarticles.framework.presentaion
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
