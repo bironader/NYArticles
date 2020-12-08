@@ -21,7 +21,7 @@ object Versions {
     const val SWIPE_REFRESH = "1.1.0"
     const val SAFE_ARGS = "2.3.2"
     const val UTILS = "1.9.12"
-    const val MOCKITO = "1.10.19"
+    const val MOCKITO = "3.3.3"
     const val JUNIT = "4.13.1"
     const val ARCH_CORE_TEST ="2.1.0"
 

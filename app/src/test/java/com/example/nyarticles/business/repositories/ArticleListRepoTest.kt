@@ -1,26 +1,29 @@
 package com.example.nyarticles.business.repositories
 
+import com.example.nyarticles.TestCoroutineRule
 import com.example.nyarticles.business.entites.Article
 import com.example.nyarticles.business.entites.Result
 import com.example.nyarticles.framework.datasource.remote.abstraction.ArticlesListDataSource
+import com.example.nyarticles.framework.presentaion.ArticleListViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runBlockingTest
 import org.junit.Assert
 import org.junit.Assert.assertNotNull
 import org.junit.Before
+import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
-import org.mockito.Mock
-import org.mockito.Mockito.`when`
-import org.mockito.Mockito.verify
-import org.mockito.MockitoAnnotations
 import org.mockito.junit.MockitoJUnitRunner
 
 
+@ExperimentalCoroutinesApi
+@RunWith(MockitoJUnitRunner::class)
 class ArticleListRepoTest {
 
 
+
     lateinit var repo: ArticleListRepo
+
 
 
     @ExperimentalCoroutinesApi
@@ -42,6 +45,7 @@ class ArticleListRepoTest {
         }
 
     }
+
 
     @ExperimentalCoroutinesApi
     @Test
