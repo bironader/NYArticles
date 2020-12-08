@@ -1,5 +1,6 @@
 package com.example.nyarticles.business.repositories
 
+import com.example.nyarticles.business.entites.ApiResponseWraper
 import com.example.nyarticles.business.entites.Article
 import com.example.nyarticles.business.entites.Result
 import com.example.nyarticles.framework.datasource.remote.abstraction.ArticlesListDataSource
@@ -8,13 +9,15 @@ import javax.inject.Inject
 
 class ArticleListRepo @Inject constructor(private val articlesListDataSource: ArticlesListDataSource) {
 
-    suspend fun fetchArticles(  onSuccess: (Result<Article>) -> Unit, onFailed: (Throwable) -> Unit) {
+    suspend fun fetchArticles(): ApiResponseWraper<Article> {
+        val responseWraper = ApiResponseWraper<Article>(null, null)
         try {
-            val x = articlesListDataSource.getArticles()
-            onSuccess(x)
+            responseWraper.result = articlesListDataSource.getArticles()
+
         } catch (throwable: Throwable) {
-            onFailed(throwable)
+            responseWraper.throwable = throwable
         }
+        return responseWraper
     }
 
 }

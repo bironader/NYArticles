@@ -26,10 +26,9 @@ class ArticleListViewModel @ViewModelInject constructor(
         viewModelScope.launch(Dispatchers.IO)
         {
             _stateLiveData.postValue(Loading())
-            getArtcileListUseCase.getArtcilesFromRepo(
-                onSuccess = { _stateLiveData.postValue(Success(it)) },
-                onFailed = { _stateLiveData.postValue(Failure(it.getType())) }
-            )
+            val response = getArtcileListUseCase.getArtcilesFromRepo()
+            response.result?.let { result -> _stateLiveData.postValue(Success(result)) }
+            response.throwable?.let { exception -> _stateLiveData.postValue(Failure(exception.getType())) }
         }
 
     }
