@@ -9,15 +9,15 @@ plugins {
 }
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.2"
+    compileSdkVersion ApplicationProperties.COMPLIED_SDK_VERSION
+    buildToolsVersion ApplicationProperties.BUILD_TOOL_VERSION
 
     defaultConfig {
-        applicationId "com.example.nyarticles"
-        minSdkVersion 16
-        targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
+        applicationId ApplicationProperties.PACAKGE_ID
+        minSdkVersion ApplicationProperties.MIN_SDK_VERSION
+        targetSdkVersion ApplicationProperties.TARGET_SDK_VERSION
+        versionCode ApplicationProperties.VERSION_CODE
+        versionName ApplicationProperties.VERSION_NAME
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
@@ -86,8 +86,8 @@ dependencies {
 sonarqube {
     properties {
         property 'sonar.projectName', 'NYArticles'
-        property "sonar.projectKey", "com.example.nyarticles"
-        property 'sonar.projectVersion', '1'
+        property "sonar.projectKey", ApplicationProperties.PACAKGE_ID
+        property 'sonar.projectVersion', ApplicationProperties.VERSION_CODE
         property 'sonar.sources', 'src/main/java'
         property 'sonar.language', 'kotlin'
         property 'sonar.sourceEncoding', 'UTF-8'
