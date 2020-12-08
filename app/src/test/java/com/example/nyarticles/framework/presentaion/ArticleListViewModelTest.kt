@@ -52,7 +52,7 @@ class ArticleListViewModelTest {
     }
 
     @Test
-    fun `fetchArticle()_success_postSuccessResource`() {
+    fun `fetchArticle()_failed_postSuccessResource`() {
         testCoroutineRule.runBlockingTest {
 
             //Arrange
