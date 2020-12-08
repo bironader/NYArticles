@@ -10,7 +10,8 @@ class ArticleListRepo @Inject constructor(private val articlesListDataSource: Ar
 
     suspend fun fetchArticles(  onSuccess: (Result<Article>) -> Unit, onFailed: (Throwable) -> Unit) {
         try {
-            onSuccess(articlesListDataSource.getArticles())
+            val x = articlesListDataSource.getArticles()
+            onSuccess(x)
         } catch (throwable: Throwable) {
             onFailed(throwable)
         }
