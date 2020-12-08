@@ -8,7 +8,7 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class Article(
     @SerializedName("abstract")
-    val `abstract`: String = "",
+    val abstract: String = "",
     @SerializedName("adx_keywords")
     val adxKeywords: String = "",
     @SerializedName("asset_id")
