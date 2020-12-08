@@ -49,7 +49,7 @@ class ArticleListRepoTest {
         runBlockingTest {
 
             //Arrange
-            val result = Throwable("Http Errpr") // error
+            val result = Throwable("Http Error") // error
             repo = ArticleListRepo(object : ArticlesListDataSource {
                 override suspend fun getArticles() = throw result
             })
