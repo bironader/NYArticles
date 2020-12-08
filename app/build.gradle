@@ -5,6 +5,7 @@ plugins {
     id 'dagger.hilt.android.plugin'
     id 'kotlin-parcelize'
     id 'androidx.navigation.safeargs.kotlin'
+    id "org.sonarqube" version "3.0"
 }
 
 android {
@@ -81,4 +82,15 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+}
+sonarqube {
+    properties {
+        property 'sonar.projectName', 'NYArticles'
+        property "sonar.projectKey", "com.example.nyarticles"
+        property 'sonar.projectVersion', '1'
+        property 'sonar.sources', 'src/main/java'
+        property 'sonar.language', 'kotlin'
+        property 'sonar.sourceEncoding', 'UTF-8'
+        property 'sonar.java.binaries', 'build'
+    }
 }
