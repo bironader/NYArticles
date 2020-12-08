@@ -79,7 +79,11 @@ dependencies {
     kapt AnnotationProcessing.HILT_LIFECYCLE_COMPLIER
     kapt AnnotationProcessing.GLIDE_COMPILER
 
-    testImplementation 'junit:junit:4.+'
+    testImplementation TestDependencies.JUNIT
+    testImplementation TestDependencies.MOCKITO
+    testImplementation TestDependencies.ANDROID_ARC_TEST
+    testImplementation TestDependencies.COROUTINES_TEST
+
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 }
