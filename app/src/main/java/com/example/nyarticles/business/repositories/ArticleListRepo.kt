@@ -12,7 +12,9 @@ class ArticleListRepo @Inject constructor(private val articlesListDataSource: Ar
     suspend fun fetchArticles(): ApiResponseWraper<Article> {
         val responseWraper = ApiResponseWraper<Article>(null, null)
         try {
-            responseWraper.result = articlesListDataSource.getArticles()
+            val response =  articlesListDataSource.getArticles()
+            responseWraper.result = response.body()
+
 
         } catch (throwable: Throwable) {
             responseWraper.throwable = throwable

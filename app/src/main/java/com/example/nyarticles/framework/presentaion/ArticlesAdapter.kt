@@ -47,7 +47,7 @@ class ArticlesAdapter @Inject constructor() : RecyclerView.Adapter<ArticleHolder
             binding.item = item
             GlideUtils.loadImageUrl(
                 binding.articleImg,
-                item.media[0].mediaMetadata.find { it.format == "mediumThreeByTwo210" }?.url
+                if (item.media.isNotEmpty()) item.media[0].mediaMetadata.find { it.format == "mediumThreeByTwo210" }?.url else ""
             )
             binding.root.setOnClickListener {
                 itemClickListener.itemClick(
