@@ -1,20 +1,21 @@
 package com.example.nyarticles.injection
 
-import com.example.nyarticles.business.repositories.ArticleListRepo
+import com.example.nyarticles.business.repositories.impl.ArticleListRepoImpl
 import com.example.nyarticles.business.usecases.GetArtcileListUseCase
 import com.example.nyarticles.business.usecases.GetArticleListUseCaseImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ApplicationComponent
+import dagger.hilt.components.SingletonComponent
+import javax.inject.Singleton
 
 
-@InstallIn(ApplicationComponent::class)
+@InstallIn(SingletonComponent::class)
 @Module
 class ArticleUserCaseProviderModule {
 
-
+    @Singleton
     @Provides
-    fun provideGetArticleListUseCase(articleListRepo: ArticleListRepo): GetArtcileListUseCase =
-        GetArticleListUseCaseImpl(articleListRepo)
+    fun provideGetArticleListUseCase(articleListRepoImpl: ArticleListRepoImpl): GetArtcileListUseCase =
+        GetArticleListUseCaseImpl(articleListRepoImpl)
 }

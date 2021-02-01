@@ -1,16 +1,10 @@
 package com.example.nyarticles.business.repositories
 
-import com.example.nyarticles.TestCoroutineRule
-import com.example.nyarticles.business.entites.Article
-import com.example.nyarticles.business.entites.Result
+import com.example.nyarticles.business.repositories.impl.ArticleListRepoImpl
 import com.example.nyarticles.framework.datasource.remote.abstraction.ArticlesListDataSource
-import com.example.nyarticles.framework.presentaion.ArticleListViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runBlockingTest
-import org.junit.Assert
 import org.junit.Assert.assertNotNull
-import org.junit.Before
-import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.junit.MockitoJUnitRunner
@@ -22,7 +16,7 @@ class ArticleListRepoTest {
 
 
 
-    lateinit var repo: ArticleListRepo
+    lateinit var repoImpl: ArticleListRepoImpl
 
 
 
@@ -33,12 +27,12 @@ class ArticleListRepoTest {
 
             //Arrange
             val result = Result<Article>(emptyList()) // empty list
-            repo = ArticleListRepo(object : ArticlesListDataSource {
+            repoImpl = ArticleListRepoImpl(object : ArticlesListDataSource {
                 override suspend fun getArticles() = result
             })
 
             //Act
-            val response = repo.fetchArticles()
+            val response = repoImpl.fetchArticles()
 
             // Assert
             assertNotNull(response.result)
@@ -54,12 +48,12 @@ class ArticleListRepoTest {
 
             //Arrange
             val result = Throwable("Http Error") // error
-            repo = ArticleListRepo(object : ArticlesListDataSource {
+            repoImpl = ArticleListRepoImpl(object : ArticlesListDataSource {
                 override suspend fun getArticles() = throw result
             })
 
             //Act
-            val response = repo.fetchArticles()
+            val response = repoImpl.fetchArticles()
 
             // Assert
             assertNotNull(response.throwable)

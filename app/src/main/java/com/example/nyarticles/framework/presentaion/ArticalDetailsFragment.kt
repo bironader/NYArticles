@@ -1,17 +1,12 @@
 package com.example.nyarticles.framework.presentaion
 
-import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.ViewCompat
 import androidx.databinding.DataBindingUtil
-import androidx.transition.TransitionInflater
 import com.example.nyarticles.R
-import com.example.nyarticles.business.entites.Article
-import com.example.nyarticles.databinding.FragmentArtcileListBinding
 import com.example.nyarticles.databinding.FragmentArticalDetailsBinding
 import com.example.nyarticles.framework.utils.GlideUtils
 import dagger.hilt.android.AndroidEntryPoint

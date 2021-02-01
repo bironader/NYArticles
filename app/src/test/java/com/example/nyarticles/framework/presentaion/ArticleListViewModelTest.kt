@@ -3,25 +3,15 @@ package com.example.nyarticles.framework.presentaion
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
 import com.example.nyarticles.TestCoroutineRule
-import com.example.nyarticles.business.entites.ApiResponseWraper
-import com.example.nyarticles.business.entites.Article
 import com.example.nyarticles.business.entites.Resource
 import com.example.nyarticles.business.entites.Resource.*
-import com.example.nyarticles.business.entites.Result
-import com.example.nyarticles.business.repositories.ArticleListRepo
 import com.example.nyarticles.business.usecases.GetArtcileListUseCase
-import com.example.nyarticles.framework.datasource.remote.abstraction.ArticlesListDataSource
-import com.example.nyarticles.framework.utils.getType
-import junit.framework.TestCase
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.test.runBlockingTest
-import org.junit.Assert
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mock
-import org.mockito.Mockito
 import org.mockito.Mockito.*
 import org.mockito.junit.MockitoJUnitRunner
 

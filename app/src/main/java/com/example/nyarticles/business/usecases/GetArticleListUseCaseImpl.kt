@@ -1,15 +1,12 @@
 package com.example.nyarticles.business.usecases
 
-import com.example.nyarticles.business.entites.ApiResponseWraper
-import com.example.nyarticles.business.entites.Article
-import com.example.nyarticles.business.entites.Result
-import com.example.nyarticles.business.repositories.ArticleListRepo
+import com.example.nyarticles.business.repositories.impl.ArticleListRepoImpl
 import javax.inject.Inject
 
 
-class GetArticleListUseCaseImpl @Inject constructor(private val articleListRepo: ArticleListRepo) :
+class GetArticleListUseCaseImpl @Inject constructor(private val articleListRepoImpl: ArticleListRepoImpl) :
     GetArtcileListUseCase {
 
-    override suspend fun getArtcilesFromRepo() = articleListRepo.fetchArticles()
+    override suspend fun getArtcilesFromRepo() = articleListRepoImpl.fetchArticles()
 
 }

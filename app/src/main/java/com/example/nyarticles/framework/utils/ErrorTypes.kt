@@ -2,13 +2,10 @@ package com.example.nyarticles.framework.utils
 
 import android.content.Context
 import com.example.nyarticles.R
-import com.example.nyarticles.business.entites.Error
-import com.example.nyarticles.business.entites.Result
 import com.example.nyarticles.framework.utils.ErrorTypes.*
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import retrofit2.HttpException
-import timber.log.Timber
 import java.net.ConnectException
 import java.net.UnknownHostException
 import java.util.concurrent.TimeoutException
