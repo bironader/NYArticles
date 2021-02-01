@@ -1,4 +1,4 @@
-package com.example.nyarticles.business.entites
+package com.example.nyarticles.framework.datasource.remote.responses
 
 
 import android.os.Parcelable
