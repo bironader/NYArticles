@@ -6,7 +6,7 @@ object Versions {
     const val CONSTRAINT_LAYOUT = "2.0.4"
     const val HILT_LIFECYCLE = "1.0.0-alpha01"
     const val KOTLIN = "1.4.20"
-    const val HILT = "2.28-alpha"
+    const val HILT = "2.31.2-alpha"
     const val COROUTINES = "1.3.0"
     const val RETROFIT = "2.9.0"
     const val APP_COMPAT = "1.2.0"
