@@ -1,23 +1,21 @@
 package com.example.nyarticles.business.repositories
 
+import com.example.nyarticles.business.entites.ArticleDomainModel
 import com.example.nyarticles.business.repositories.impl.ArticleListRepoImpl
 import com.example.nyarticles.framework.datasource.remote.abstraction.ArticlesListDataSource
 import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.test.runBlockingTest
-import org.junit.Assert.assertNotNull
+import org.junit.Assert.*
 import org.junit.Test
-import org.junit.runner.RunWith
-import org.mockito.junit.MockitoJUnitRunner
 
 
 @ExperimentalCoroutinesApi
-@RunWith(MockitoJUnitRunner::class)
 class ArticleListRepoTest {
 
 
-
-    lateinit var repoImpl: ArticleListRepoImpl
-
+    private lateinit var repoImpl: ArticleListRepoImpl
 
 
     @ExperimentalCoroutinesApi
@@ -26,16 +24,23 @@ class ArticleListRepoTest {
         runBlockingTest {
 
             //Arrange
-            val result = Result<Article>(emptyList()) // empty list
+            val result = emptyList<ArticleDomainModel>() // empty list
             repoImpl = ArticleListRepoImpl(object : ArticlesListDataSource {
                 override suspend fun getArticles() = result
             })
 
             //Act
-            val response = repoImpl.fetchArticles()
+            var success: List<ArticleDomainModel>? = null
+            var throwable: Throwable? = null
+            val flow = repoImpl.fetchArticles()
+            flow.catch { throwable = it }
+                .collect { success = it }
+
 
             // Assert
-            assertNotNull(response.result)
+            assertNotNull(success)
+            assertNull(throwable)
+            assertEquals(success, result)
         }
 
     }
@@ -47,16 +52,23 @@ class ArticleListRepoTest {
         runBlockingTest {
 
             //Arrange
-            val result = Throwable("Http Error") // error
+            val result = Throwable("Http Exception") // empty list
             repoImpl = ArticleListRepoImpl(object : ArticlesListDataSource {
                 override suspend fun getArticles() = throw result
             })
 
             //Act
-            val response = repoImpl.fetchArticles()
+            var success: List<ArticleDomainModel>? = null
+            var throwable: Throwable? = null
+            val flow = repoImpl.fetchArticles()
+            flow.catch { throwable = it }
+                .collect { success = it }
+
 
             // Assert
-            assertNotNull(response.throwable)
+            assertNotNull(throwable)
+            assertNull(success)
+            assertEquals(throwable?.message, result.message)
         }
 
     }
