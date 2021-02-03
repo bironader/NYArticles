@@ -6,7 +6,7 @@ import com.example.nyarticles.framework.utils.ErrorTypes
  * Represents a network bound resource. Each subclass represents the resource's   state:
  * - [Loading]: the resource is being retrieved from network.
  * - [Success]: the resource has been retrieved (available in [Success.data] field)
- * - [Failure]: the resource retrieving has failed (throwable available in [Failure.throwable]
+ * - [Failure]: the resource retrieving has failed (error available in [Failure.errorTypes]
  * field)
  */
 sealed class Resource<out T> {

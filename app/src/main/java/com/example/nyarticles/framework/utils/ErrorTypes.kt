@@ -9,6 +9,7 @@ import retrofit2.HttpException
 import java.net.ConnectException
 import java.net.UnknownHostException
 import java.util.concurrent.TimeoutException
+import com.example.nyarticles.framework.datasource.remote.responses.Error as Error
 
 sealed class ErrorTypes {
     object NetworkError : ErrorTypes()

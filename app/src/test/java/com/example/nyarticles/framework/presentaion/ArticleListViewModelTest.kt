@@ -6,6 +6,7 @@ import com.example.nyarticles.TestCoroutineRule
 import com.example.nyarticles.business.entites.Resource
 import com.example.nyarticles.business.entites.Resource.*
 import com.example.nyarticles.business.usecases.GetArtcileListUseCase
+import com.example.nyarticles.framework.presentaion.articlelist.ArticleListViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.junit.Before
 import org.junit.Rule
@@ -76,7 +77,7 @@ class ArticleListViewModelTest {
             viewModel.fetchArticles()
 
             // Assert
-            verify(stateObserver).onChanged(Failure(errorResponse.throwable?.getType()!!))
+            verify(stateObserver).onChanged(Failure(errorResponse.throwable.getType()!!))
 
         }
 

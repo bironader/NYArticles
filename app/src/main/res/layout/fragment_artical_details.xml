@@ -7,7 +7,7 @@
 
         <variable
             name="article"
-            type="com.example.nyarticles.business.entites.Article" />
+            type="com.example.nyarticles.business.entites.ArticleDomainModel" />
     </data>
 
     <ScrollView
@@ -18,7 +18,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:context=".framework.presentaion.ArticalDetailsFragment">
+            tools:context=".framework.presentaion.articledetails.ArticalDetailsFragment">
 
             <ImageView
                 android:id="@+id/article_image"
@@ -26,6 +26,7 @@
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
                 android:scaleType="fitCenter"
+                app:imageUrl="@{article.image}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -51,6 +52,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
                 android:text="@{article.publishedDate}"
                 android:textSize="11sp"
                 android:textStyle="italic"
@@ -58,8 +60,7 @@
                 app:layout_constraintStart_toEndOf="@+id/title"
                 app:layout_constraintTop_toBottomOf="@id/article_image"
                 tools:ignore="SmallSp"
-                tools:text="By Nicholas Kristof"
-                android:layout_marginRight="8dp" />
+                tools:text="By Nicholas Kristof" />
 
             <TextView
                 android:id="@+id/title"
@@ -72,7 +73,6 @@
                 android:text="@{article.title}"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:transitionName="as"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/by"
                 tools:text="That Mysterious Monolith in the Utah Desert? It’s Gone, Officials Say" />

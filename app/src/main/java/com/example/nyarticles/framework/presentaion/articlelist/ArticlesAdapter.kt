@@ -1,4 +1,4 @@
-package com.example.nyarticles.framework.presentaion
+package com.example.nyarticles.framework.presentaion.articlelist
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -7,16 +7,16 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.nyarticles.R
 import com.example.nyarticles.business.entites.ArticleDomainModel
 import com.example.nyarticles.databinding.ArticleItemBinding
-import com.example.nyarticles.framework.presentaion.ArticlesAdapter.ArticleHolder
-import com.example.nyarticles.framework.utils.GlideUtils
+import com.example.nyarticles.framework.presentaion.articlelist.ArticlesAdapter.ArticleHolder
 import com.example.nyarticles.framework.utils.ItemClickListener
 import javax.inject.Inject
 
-class ArticlesAdapter @Inject constructor() : RecyclerView.Adapter<ArticleHolder>() {
+class ArticlesAdapter @Inject constructor() :
+    RecyclerView.Adapter<ArticleHolder>() {
 
     private var items = listOf<ArticleDomainModel>()
-
     lateinit var itemClickListener: ItemClickListener<ArticleDomainModel>
+
     fun showItems(items: List<ArticleDomainModel>) {
         this.items = items
         notifyDataSetChanged()
@@ -38,23 +38,21 @@ class ArticlesAdapter @Inject constructor() : RecyclerView.Adapter<ArticleHolder
     override fun getItemCount() = items.size
 
 
-    inner class ArticleHolder(private val binding: ArticleItemBinding) :
+    inner class ArticleHolder(
+        private val binding: ArticleItemBinding,
+    ) :
         RecyclerView.ViewHolder(binding.root) {
 
 
         fun bind(item: ArticleDomainModel) {
-//            binding.item = item
-//            GlideUtils.loadImageUrl(
-//                binding.articleImg,
-//                if (item.media.isNotEmpty()) item.media[0].mediaMetadata.find { it.format == "mediumThreeByTwo210" }?.url else ""
-//            )
-//            binding.root.setOnClickListener {
-//                itemClickListener.itemClick(
-//                    item
-//                )
-//            }
+            binding.item = item
+            binding.root.setOnClickListener {
+                if (::itemClickListener.isInitialized)
+                    itemClickListener.itemClick(item)
+
+            }
         }
+
+
     }
-
-
 }

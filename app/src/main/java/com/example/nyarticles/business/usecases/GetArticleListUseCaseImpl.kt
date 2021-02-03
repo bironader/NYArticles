@@ -6,7 +6,8 @@ import javax.inject.Inject
 
 class GetArticleListUseCaseImpl @Inject constructor(private val articleListRepoImpl: ArticleListRepoImpl) :
     GetArtcileListUseCase {
+    override suspend fun getArtciles() =
+        articleListRepoImpl.fetchArticles()
 
-    override suspend fun getArtcilesFromRepo() = articleListRepoImpl.fetchArticles()
 
 }

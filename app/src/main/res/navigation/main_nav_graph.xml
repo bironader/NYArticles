@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/artcileListFragment"
-        android:name="com.example.nyarticles.framework.presentaion.ArticleListFragment"
+        android:name="com.example.nyarticles.framework.presentaion.articlelist.ArticleListFragment"
         android:label="@string/most_viewed"
         tools:layout="@layout/fragment_artcile_list">
         <action
@@ -20,12 +20,12 @@
     </fragment>
     <fragment
         android:id="@+id/articalDetailsFragment"
-        android:name="com.example.nyarticles.framework.presentaion.ArticalDetailsFragment"
+        android:name="com.example.nyarticles.framework.presentaion.articledetails.ArticalDetailsFragment"
         android:label="{title}"
         tools:layout="@layout/fragment_artical_details">
         <argument
             android:name="article"
-            app:argType="com.example.nyarticles.business.entites.Article" />
+            app:argType="com.example.nyarticles.business.entites.ArticleDomainModel" />
         <argument
             android:name="title"
             app:argType="string" />
