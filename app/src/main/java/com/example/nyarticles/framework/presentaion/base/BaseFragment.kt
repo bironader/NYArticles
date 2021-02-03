@@ -48,6 +48,7 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
     }
 
 
+    // avoid leaks
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

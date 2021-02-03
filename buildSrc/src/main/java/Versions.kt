@@ -23,7 +23,8 @@ object Versions {
     const val UTILS = "1.9.12"
     const val MOCKITO = "3.3.3"
     const val JUNIT = "4.13.1"
-    const val ARCH_CORE_TEST ="2.1.0"
-
-
+    const val ARCH_CORE_TEST = "2.1.0"
+    const val ESPRESSO = "3.3.0"
+    const val FRAGMENT_VERSION = "1.2.5"
+    const val ANDROID_TEST = "1.1.0"
 }

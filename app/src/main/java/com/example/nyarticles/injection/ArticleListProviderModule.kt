@@ -1,6 +1,9 @@
 package com.example.nyarticles.injection
 
+import com.example.nyarticles.business.repositories.abstraction.ArticleListRepo
 import com.example.nyarticles.business.repositories.impl.ArticleListRepoImpl
+import com.example.nyarticles.business.usecases.GetArtcileListUseCase
+import com.example.nyarticles.business.usecases.GetArticleListUseCaseImpl
 import com.example.nyarticles.framework.datasource.remote.ArticlesListApi
 import com.example.nyarticles.framework.datasource.remote.abstraction.ArticlesListDataSource
 import com.example.nyarticles.framework.datasource.remote.implementation.ArticleListDataSourceImpl
@@ -14,13 +17,14 @@ import javax.inject.Singleton
 
 @InstallIn(SingletonComponent::class)
 @Module
-class ArticleListApiProviderModule {
+class ArticleListProviderModule {
 
 
     @Singleton
     @Provides
     fun provideArticlesListApi(retrofit: Retrofit): ArticlesListApi =
         retrofit.create(ArticlesListApi::class.java)
+
     @Singleton
     @Provides
     fun provideArticlesListDataSource(articlesListApi: ArticlesListApi): ArticlesListDataSource =
@@ -28,7 +32,13 @@ class ArticleListApiProviderModule {
 
     @Singleton
     @Provides
-    fun provideArticlesListRepo(dataSource: ArticlesListDataSource): ArticleListRepoImpl =
+    fun provideArticlesListRepo(dataSource: ArticlesListDataSource): ArticleListRepo =
         ArticleListRepoImpl(dataSource)
+
+
+    @Singleton
+    @Provides
+    fun provideGetArticleListUseCase(articleListRepoImpl: ArticleListRepoImpl): GetArtcileListUseCase =
+        GetArticleListUseCaseImpl(articleListRepoImpl)
 
 }

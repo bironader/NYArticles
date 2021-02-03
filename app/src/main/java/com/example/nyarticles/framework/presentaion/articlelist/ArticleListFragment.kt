@@ -8,6 +8,7 @@ import com.example.nyarticles.business.entites.Resource.*
 import com.example.nyarticles.databinding.FragmentArtcileListBinding
 import com.example.nyarticles.framework.presentaion.base.BaseFragment
 import com.example.nyarticles.framework.utils.ItemClickListener
+import com.example.nyarticles.framework.utils.getType
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 
@@ -40,7 +41,7 @@ class ArticleListFragment : BaseFragment<FragmentArtcileListBinding>(),
                 }
                 is Failure -> {
                     binding.swipeRef.isRefreshing = false
-                    handleErrors(state.errorTypes)
+                    handleErrors(state.throwable.getType())
                 }
             }
         })

@@ -28,5 +28,6 @@ object Dependencies {
     const val SWIPE_REFRESH =
         "androidx.swiperefreshlayout:swiperefreshlayout:${Versions.SWIPE_REFRESH}"
     const val UtiLS = "com.blankj:utilcode:${Versions.UTILS}"
+    const val ESPRESSO_IDLING_RESOURCE = "androidx.test.espresso:espresso-idling-resource:${Versions.ESPRESSO}"
 
 }

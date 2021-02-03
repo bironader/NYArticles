@@ -73,6 +73,9 @@ dependencies {
     implementation Dependencies.COROUTINES
     implementation Dependencies.SWIPE_REFRESH
     implementation Dependencies.UtiLS
+    implementation Dependencies.ESPRESSO_IDLING_RESOURCE
+
+
     debugImplementation Dependencies.CHUCK
     releaseImplementation Dependencies.CHUCK_NO_OP
     kapt AnnotationProcessing.HILT_COMPILER
@@ -83,9 +86,12 @@ dependencies {
     testImplementation TestDependencies.MOCKITO
     testImplementation TestDependencies.ANDROID_ARC_TEST
     testImplementation TestDependencies.COROUTINES_TEST
-
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    androidTestImplementation TestDependencies.ESPRESSO
+    androidTestImplementation TestDependencies.TEST_CORE
+    androidTestImplementation TestDependencies.ANDROID_JUNIT_KTX
+
 }
 sonarqube {
     properties {

@@ -9,6 +9,7 @@ import com.example.nyarticles.business.entites.Resource
 import com.example.nyarticles.business.entites.Resource.*
 import com.example.nyarticles.business.usecases.GetArtcileListUseCase
 import com.example.nyarticles.framework.utils.getType
+import com.example.nyarticles.framework.utils.launchIdling
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.catch
@@ -33,14 +34,14 @@ class ArticleListViewModel @Inject constructor(
     }
 
     fun fetchArticles() {
-        viewModelScope.launch {
+        viewModelScope.launchIdling {
 
             getArtcileListUseCase.getArtciles()
                 .onStart {
                     _stateLiveData.value = Loading()
                 }
                 .catch {
-                    _stateLiveData.value = Failure(it.getType())
+                    _stateLiveData.value = Failure(it)
                 }
                 .collect {
                     _stateLiveData.value = Success(it)

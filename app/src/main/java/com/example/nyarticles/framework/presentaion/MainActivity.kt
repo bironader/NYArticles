@@ -32,4 +32,9 @@ class MainActivity : AppCompatActivity() {
         binding.appBar
             .setupWithNavController(navController, appBarConfiguration)
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
+    }
 }
