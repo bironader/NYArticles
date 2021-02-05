@@ -13,6 +13,13 @@ clone repo and add your nytimes api key in your gradle.properties
 <img src="screenshots/gradle.prop.PNG">
 
 
+## Dependencies Direction
+<img src="screenshots/clean-mvvm.png">
+
+
+## Package Structure
+<img src="screenshots/app_arch.png">
+
 ## This project uses:
 - Kotlin
 - [Retrofit](http://square.github.io/retrofit/)
