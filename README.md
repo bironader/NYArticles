@@ -28,9 +28,9 @@ clone repo and add your nytimes api key in your gradle.properties
 - MVVM as ui pattern and LiveData
 - Coroutines
 
-## SolarQUbe 
+## SonarQube
 - [Download java 11](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)
-- [Download SolarQube](https://www.sonarqube.org/downloads/)
+- [Download SonarQube](https://www.sonarqube.org/downloads/)
 - For windows run StartSonar.bat file
 - For mac run sonar.sh start
 - Open localhost:9000 panel
