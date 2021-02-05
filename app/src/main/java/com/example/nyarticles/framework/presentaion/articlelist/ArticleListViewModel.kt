@@ -7,10 +7,10 @@ import androidx.lifecycle.viewModelScope
 import com.example.nyarticles.business.entites.ArticleDomainModel
 import com.example.nyarticles.business.entites.Resource
 import com.example.nyarticles.business.entites.Resource.*
-import com.example.nyarticles.business.usecases.GetArtcileListUseCase
-import com.example.nyarticles.framework.utils.getType
+import com.example.nyarticles.business.usecases.abstraction.GetArtcileListUseCase
 import com.example.nyarticles.framework.utils.launchIdling
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.collect
@@ -21,7 +21,8 @@ import javax.inject.Inject
 @HiltViewModel
 @ExperimentalCoroutinesApi
 class ArticleListViewModel @Inject constructor(
-    private val getArtcileListUseCase: GetArtcileListUseCase
+    private val getArtcileListUseCase: GetArtcileListUseCase,
+    private val dispatcher: CoroutineDispatcher
 
 ) : ViewModel() {
 
@@ -34,17 +35,20 @@ class ArticleListViewModel @Inject constructor(
     }
 
     fun fetchArticles() {
-        viewModelScope.launchIdling {
+        viewModelScope.launchIdling(dispatcher) {
 
             getArtcileListUseCase.getArtciles()
+
                 .onStart {
                     _stateLiveData.value = Loading()
                 }
                 .catch {
                     _stateLiveData.value = Failure(it)
+
                 }
                 .collect {
                     _stateLiveData.value = Success(it)
+
                 }
         }
 

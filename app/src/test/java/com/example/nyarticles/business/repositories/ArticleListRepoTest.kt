@@ -1,6 +1,7 @@
 package com.example.nyarticles.business.repositories
 
 import com.example.nyarticles.business.entites.ArticleDomainModel
+import com.example.nyarticles.business.repositories.abstraction.ArticleListRepo
 import com.example.nyarticles.business.repositories.impl.ArticleListRepoImpl
 import com.example.nyarticles.framework.datasource.remote.abstraction.ArticlesListDataSource
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -15,7 +16,7 @@ import org.junit.Test
 class ArticleListRepoTest {
 
 
-    private lateinit var repoImpl: ArticleListRepoImpl
+    private lateinit var repoImpl: ArticleListRepo
 
 
     @ExperimentalCoroutinesApi

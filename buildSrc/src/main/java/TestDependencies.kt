@@ -6,6 +6,7 @@ object TestDependencies {
     const val COROUTINES_TEST =
         "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.COROUTINES}"
     const val ESPRESSO = "androidx.test.espresso:espresso-core:${Versions.ESPRESSO}"
+    const val ESPRESSO_CONT = "androidx.test.espresso:espresso-contrib:${Versions.ESPRESSO}"
     const val ANDROID_JUNIT_KTX = "androidx.test.ext:junit-ktx:${Versions.ANDROID_TEST}"
     const val TEST_FRAGMENT = "androidx.fragment:fragment-testing:${Versions.FRAGMENT_VERSION}"
     const val TEST_CORE = "androidx.test:core:${Versions.ANDROID_TEST}"

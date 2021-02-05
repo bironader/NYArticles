@@ -2,8 +2,8 @@ package com.example.nyarticles.injection
 
 import com.example.nyarticles.business.repositories.abstraction.ArticleListRepo
 import com.example.nyarticles.business.repositories.impl.ArticleListRepoImpl
-import com.example.nyarticles.business.usecases.GetArtcileListUseCase
-import com.example.nyarticles.business.usecases.GetArticleListUseCaseImpl
+import com.example.nyarticles.business.usecases.abstraction.GetArtcileListUseCase
+import com.example.nyarticles.business.usecases.impl.GetArticleListUseCaseImpl
 import com.example.nyarticles.framework.datasource.remote.ArticlesListApi
 import com.example.nyarticles.framework.datasource.remote.abstraction.ArticlesListDataSource
 import com.example.nyarticles.framework.datasource.remote.implementation.ArticleListDataSourceImpl

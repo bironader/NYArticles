@@ -88,9 +88,14 @@ dependencies {
     testImplementation TestDependencies.COROUTINES_TEST
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
 
+    androidTestImplementation TestDependencies.ESPRESSO_CONT
     androidTestImplementation TestDependencies.ESPRESSO
     androidTestImplementation TestDependencies.TEST_CORE
     androidTestImplementation TestDependencies.ANDROID_JUNIT_KTX
+    debugImplementation(TestDependencies.TEST_FRAGMENT) {
+        exclude group: 'androidx.test', module: 'monitor'
+
+    }
 
 }
 sonarqube {

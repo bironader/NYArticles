@@ -44,7 +44,7 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
 
     protected fun handleErrors(error: ErrorTypes) {
         SnackbarUtils.with(binding.root)
-            .setMessage(error.getMessage(requireContext())).showError()
+            .setMessage(error.getMessage(requireContext()))
     }
 
 

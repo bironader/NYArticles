@@ -1,10 +1,14 @@
 package com.example.nyarticles.framework.presentaion.articledetails
 
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import com.example.nyarticles.R
 import com.example.nyarticles.business.entites.ArticleDomainModel
 import com.example.nyarticles.databinding.FragmentArticalDetailsBinding
 import com.example.nyarticles.framework.presentaion.base.BaseFragment
+import com.example.nyarticles.framework.utils.EspressoIdlingResource
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -12,6 +16,14 @@ import dagger.hilt.android.AndroidEntryPoint
 class ArticalDetailsFragment : BaseFragment<FragmentArticalDetailsBinding>() {
 
 
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        EspressoIdlingResource.increment()
+        return super.onCreateView(inflater, container, savedInstanceState)
+    }
     private lateinit var article: ArticleDomainModel
 
 
@@ -28,4 +40,8 @@ class ArticalDetailsFragment : BaseFragment<FragmentArticalDetailsBinding>() {
 
     override fun getLayoutResId() = R.layout.fragment_artical_details
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        EspressoIdlingResource.decrement()
+    }
 }

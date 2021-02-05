@@ -1,5 +1,6 @@
 package com.example.nyarticles.framework.presentaion.articlelist
 
+import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.nyarticles.R
@@ -40,8 +41,9 @@ class ArticleListFragment : BaseFragment<FragmentArtcileListBinding>(),
 
                 }
                 is Failure -> {
-                    binding.swipeRef.isRefreshing = false
                     handleErrors(state.throwable.getType())
+                    binding.swipeRef.isRefreshing = false
+
                 }
             }
         })
