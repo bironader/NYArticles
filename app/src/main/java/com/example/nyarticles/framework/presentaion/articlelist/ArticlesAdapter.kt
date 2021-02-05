@@ -39,7 +39,7 @@ class ArticlesAdapter @Inject constructor() :
 
 
     inner class ArticleHolder(
-        private val binding: ArticleItemBinding,
+        private val binding: ArticleItemBinding
     ) :
         RecyclerView.ViewHolder(binding.root) {
 

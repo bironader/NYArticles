@@ -8,12 +8,13 @@ import com.example.nyarticles.business.entites.ArticleDomainModel
 import com.example.nyarticles.business.entites.Resource
 import com.example.nyarticles.business.entites.Resource.*
 import com.example.nyarticles.business.usecases.abstraction.GetArtcileListUseCase
-import com.example.nyarticles.framework.utils.launchIdling
+
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.onCompletion
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -35,13 +36,14 @@ class ArticleListViewModel @Inject constructor(
     }
 
     fun fetchArticles() {
-        viewModelScope.launchIdling(dispatcher) {
+        viewModelScope.launch (dispatcher) {
 
             getArtcileListUseCase.getArtciles()
 
                 .onStart {
                     _stateLiveData.value = Loading()
                 }
+
                 .catch {
                     _stateLiveData.value = Failure(it)
 

@@ -8,6 +8,7 @@ import com.example.nyarticles.business.entites.ArticleDomainModel
 import com.example.nyarticles.business.entites.Resource.*
 import com.example.nyarticles.databinding.FragmentArtcileListBinding
 import com.example.nyarticles.framework.presentaion.base.BaseFragment
+import com.example.nyarticles.framework.utils.EspressoIdlingResource
 import com.example.nyarticles.framework.utils.ItemClickListener
 import com.example.nyarticles.framework.utils.getType
 import dagger.hilt.android.AndroidEntryPoint
