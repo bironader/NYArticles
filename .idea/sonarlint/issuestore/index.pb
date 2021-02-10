@@ -13,8 +13,6 @@ X
 (gradle/wrapper/gradle-wrapper.properties,f\b\fbe448ebfc3eb2d4e308f6b8b043666f5b57235e
 
 Oapp/src/main/java/com/example/nyarticles/business/entites/ArticleDomainModel.kt,7\2\72e7065b8d38fac7d4135faaa6006338c16e2a16
-ƒ
-Sapp/src/main/java/com/example/nyarticles/business/usecases/GetArtcileListUseCase.kt,2\4\246397f1414198361996c89ca7644f831167b9f9
 
 ]app/src/main/java/com/example/nyarticles/business/repositories/abstraction/ArticleListRepo.kt,4\a\4ac80e50c89e01b8f3afc2467dedf84df50a1991
 v
@@ -45,12 +43,6 @@ s
 Capp/src/main/java/com/example/nyarticles/framework/NYApplication.kt,c\1\c159c5d9a36abe914df19d49f6af54baddb4bd67
 e
 5app/src/main/java/com/example/nyarticles/Constants.kt,e\0\e04d7801864ec3677c2b2eec63ab345d91048955
-k
-;app/src/test/java/com/example/nyarticles/ExampleUnitTest.kt,6\0\60f615ad38651f386c655991548ebdadbdc44ad7
-m
-=app/src/test/java/com/example/nyarticles/TestCoroutineRule.kt,a\6\a6023cd5b14e55c7af5665e517a4c2df4a567377
-z
-Japp/src/androidTest/java/com/example/nyarticles/ExampleInstrumentedTest.kt,c\4\c42a9ec7fc8fa72cd6178acffc0f905ff2e1fa3e
 >
 app/.gitignore,5\1\51e1c5d383dfaa35e0e7e5873a0a99355a86880f
 F
@@ -74,8 +66,6 @@ P
 gapp/src/main/java/com/example/nyarticles/framework/presentaion/articledetails/ArticalDetailsFragment.kt,7\b\7bb049830a6dacff2f32f9e6ed075408e9245e7b
 Š
 Zapp/src/main/java/com/example/nyarticles/business/repositories/impl/ArticleListRepoImpl.kt,e\1\e169e585c187de74403c321226b46be885f355d2
-‡
-Wapp/src/main/java/com/example/nyarticles/business/usecases/GetArticleListUseCaseImpl.kt,5\d\5d5790543c2d582e82b55aab83a0965786576fc4
 s
 Capp/src/main/java/com/example/nyarticles/injection/NetworkModule.kt,4\a\4a7547b2cedccc27adbf3cd3dffc3be0d3ee7642
 ^
@@ -108,7 +98,3 @@ Napp/src/main/java/com/example/nyarticles/framework/presentaion/MainActivity.kt
 japp/src/main/java/com/example/nyarticles/framework/datasource/remote/abstraction/ArticlesListDataSource.kt,6\3\63d60103a23e3a3c491117e8b411e10802400888
 ˆ
 Xapp/src/main/java/com/example/nyarticles/framework/datasource/remote/responses/Result.kt,4\2\428c9247daccedc1dd5e5f6da2c1d11df5635464
-…
-Uapp/src/test/java/com/example/nyarticles/business/repositories/ArticleListRepoTest.kt,9\6\960ea7fbd40ba5b0d7dcbe962c62dcc15f6798e1
-Š
-Zapp/src/test/java/com/example/nyarticles/framework/presentaion/ArticleListViewModelTest.kt,e\5\e599a690b5e5ef63909578adfbd25a7d09654469
