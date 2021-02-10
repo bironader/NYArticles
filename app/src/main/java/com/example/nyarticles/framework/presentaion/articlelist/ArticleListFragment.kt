@@ -1,6 +1,5 @@
 package com.example.nyarticles.framework.presentaion.articlelist
 
-import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.nyarticles.R
@@ -8,7 +7,6 @@ import com.example.nyarticles.business.entites.ArticleDomainModel
 import com.example.nyarticles.business.entites.Resource.*
 import com.example.nyarticles.databinding.FragmentArtcileListBinding
 import com.example.nyarticles.framework.presentaion.base.BaseFragment
-import com.example.nyarticles.framework.utils.EspressoIdlingResource
 import com.example.nyarticles.framework.utils.ItemClickListener
 import com.example.nyarticles.framework.utils.getType
 import dagger.hilt.android.AndroidEntryPoint

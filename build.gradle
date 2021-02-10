@@ -14,7 +14,7 @@ buildscript {
         classpath Build.KOTLIN
         classpath Build.HILT
         classpath Build.SAFE_ARGS
-        classpath 'com.hiya:jacoco-android:0.2'
+        classpath Build.JACOCO
 
 
         // NOTE: Do not place your application dependencies here; they belong

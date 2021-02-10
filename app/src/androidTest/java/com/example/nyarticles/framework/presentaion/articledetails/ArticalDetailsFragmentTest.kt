@@ -31,6 +31,7 @@ class ArticalDetailsFragmentTest {
 
     @Test
     fun test_articleDetailsFragment_visibile() {
+        Thread.sleep(1000)
         onView(withId(R.id.by))
             .check(matches(withText(article.byline)))
         onView(withId(R.id.title))
@@ -39,6 +40,6 @@ class ArticalDetailsFragmentTest {
             .check(matches(withText(article.abstract)))
         onView(withId(R.id.published_date))
             .check(matches(withText(article.publishedDate)))
-
+        Thread.sleep(1000)
     }
 }

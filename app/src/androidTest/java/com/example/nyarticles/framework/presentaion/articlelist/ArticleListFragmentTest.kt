@@ -31,10 +31,11 @@ class ArticleListFragmentTest {
 
     @Test
     fun test_ArticleListFragment_visibile() {
+        Thread.sleep(1000)
         onView(withId(R.id.swipeRef))
             .check(matches(isDisplayed()))
         onView(withId(R.id.swipeRef)).check(matches(isRefreshing()))
         onView(withId(R.id.articlesList)).check(matches((isDisplayed())))
-
+        Thread.sleep(1000)
     }
 }

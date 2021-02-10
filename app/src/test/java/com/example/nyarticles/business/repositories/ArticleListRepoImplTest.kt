@@ -13,7 +13,7 @@ import org.junit.Test
 
 
 @ExperimentalCoroutinesApi
-class ArticleListRepoTest {
+class ArticleListRepoImplTest {
 
 
     private lateinit var repoImpl: ArticleListRepo

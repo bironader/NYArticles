@@ -5,8 +5,90 @@ plugins {
     id 'dagger.hilt.android.plugin'
     id 'kotlin-parcelize'
     id 'androidx.navigation.safeargs.kotlin'
-    id "com.hiya.jacoco-android"
     id "org.sonarqube" version "2.7"
+}
+
+apply plugin: 'jacoco'
+
+jacoco {
+    toolVersion = Versions.JACOCO
+}
+tasks.withType(Test) {
+    jacoco.includeNoLocationClasses = true
+}
+
+
+task jacocoTestReport(type: JacocoReport, dependsOn: ['testDebugUnitTest', 'createDebugCoverageReport']) {
+
+    reports {
+
+        xml.enabled true
+
+
+    }
+
+    def fileFilter = [
+            // data binding
+            'android/databinding/**/*.class',
+            '**/android/databinding/*Binding.class',
+            '**/android/databinding/*',
+            '**/androidx/databinding/*',
+            '**/BR.*',
+            // android
+            '**/R.class',
+            '**/R$*.class',
+            '**/BuildConfig.*',
+            '**/Manifest*.*',
+            '**/*Test*.*',
+            'android/**/*.*',
+            // dagger
+            '**/*_MembersInjector.class',
+            '**/Dagger*Component.class',
+            '**/Dagger*Component$Builder.class',
+            '**/*Module_*Factory.class',
+            '**/di/module/*',
+            '**/*_Factory*.*',
+            '**/*Module*.*',
+            '**/*Dagger*.*',
+            '**/*Hilt*.*',
+            // kotlin
+            '**/*MapperImpl*.*',
+            '**/*$ViewInjector*.*',
+            '**/*$ViewBinder*.*',
+            '**/BuildConfig.*',
+            '**/*Component*.*',
+            '**/*BR*.*',
+            '**/Manifest*.*',
+            '**/*$Lambda$*.*',
+            '**/*Companion*.*',
+            '**/*Module*.*',
+            '**/*Dagger*.*',
+            '**/*Hilt*.*',
+            '**/*MembersInjector*.*',
+            '**/*_MembersInjector.class',
+            '**/*_Factory*.*',
+            '**/*_Provide*Factory*.*',
+            '**/*Extensions*.*',
+            // sealed and data classes
+            '**/*$Result.*',
+            '**/*$Result$*.*'
+    ]
+    def debugTree = fileTree(dir: "$project.buildDir/intermediates/javac/debug", excludes: fileFilter)
+    def mainSrc = "$project.projectDir/src/main/java"
+
+    sourceDirectories.setFrom(files([mainSrc]))
+    classDirectories.setFrom(files([debugTree]))
+    executionData.setFrom(fileTree(dir: project.buildDir, includes: [
+            'jacoco/testDebugUnitTest.exec', 'outputs/code_coverage/debugAndroidTest/connected/**/*.ec'
+    ]))
+    jacoco {
+        toolVersion = Versions.JACOCO
+    }
+
+    tasks.withType(Test) {
+        jacoco.includeNoLocationClasses = true
+        jacoco.excludes = ['jdk.internal.*']
+    }
 }
 
 
@@ -58,11 +140,9 @@ android {
     }
 
 }
-tasks.withType(Test) {
-    jacoco.includeNoLocationClasses = true
-}
-dependencies {
 
+
+dependencies {
 
     implementation Dependencies.KTS
     implementation Dependencies.KOTLIN
@@ -119,24 +199,13 @@ sonarqube {
         property 'sonar.projectVersion', ApplicationProperties.VERSION_CODE
         property 'sonar.sources', 'src/main/java'
         property 'sonar.language', 'kotlin'
-        property 'sonar.sourceEncoding', 'UTF-8'
-        property "sonar.tests", "src/test/java, src/androidTest/java"
-        property 'sonar.java.binaries', 'build'
-        def unit = fileTree(dir: project.projectDir, includes: ['**/*.exec']).files;
-        def ui = fileTree(dir: project.projectDir, includes: ['**/*.ec']).files;
-        unit.addAll(ui)
-        def files = unit.join(", ");
-
-        property "sonar.jacoco.reportPaths", files
         property "sonar.java.coveragePlugin", "jacoco"
-        property "sonar.junit.reportsPath", "build/test-results/testDebugUnitTest"
-        property "sonar.android.lint.report", "build/reports/lint-results.xml"
+        property "sonar.coverage.jacoco.xmlReportPaths", "${buildDir}/reports/coverage/debug/report.xml"
+        property 'sonar.sourceEncoding', 'UTF-8'
+
+//        property 'sonar.coverage.jacoco.xmlReportPaths',file("${buildDir}/jacacoXml.xml")
+
 
     }
 }
 
-jacocoAndroidUnitTestReport {
-    csv.enabled false
-    html.enabled true
-    xml.enabled true
-}

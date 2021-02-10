@@ -27,4 +27,5 @@ object Versions {
     const val ESPRESSO = "3.3.0"
     const val FRAGMENT_VERSION = "1.2.5"
     const val ANDROID_TEST = "1.1.0"
+    const val JACOCO = "0.8.4"
 }

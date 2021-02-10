@@ -4,5 +4,5 @@ object Build {
     const val HILT = "com.google.dagger:hilt-android-gradle-plugin:${Versions.HILT}"
     const val SAFE_ARGS =
         "androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.SAFE_ARGS}"
-
+    const val JACOCO = "org.jacoco:org.jacoco.core:${Versions.JACOCO}"
 }
