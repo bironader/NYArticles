@@ -42,5 +42,5 @@ clone repo and add your nytimes api key in your gradle.properties
 - For windows run StartSonar.bat file
 - For mac run sonar.sh start
 - Open localhost:9000 panel
-- Run ```bash gradlew jacocoTestReport sonarqube``` in android studio terminal
+- Run ```gradlew jacocoTestReport sonarqube``` in android studio terminal
 
