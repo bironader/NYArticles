@@ -33,14 +33,14 @@ clone repo and add your nytimes api key in your gradle.properties
 - [Mockito](https://site.mockito.org/)
 - Clean Architecture guide line
 - MVVM as ui pattern and LiveData
-- Coroutines
+- [Coroutines](https://developer.android.com/kotlin/coroutines)
+- [Flow](https://developer.android.com/kotlin/flow)
 
-## SonarQube
+## JacocoReport and SonarQube
 - [Download java 11](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)
 - [Download SonarQube](https://www.sonarqube.org/downloads/)
 - For windows run StartSonar.bat file
 - For mac run sonar.sh start
 - Open localhost:9000 panel
-- Create new project and add project key
-- Run gradlew sonar in android studio terminal
+- Run **gradlew jacocoTestReport sonarqube** in android studio terminal
 
