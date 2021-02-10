@@ -1,4 +1,4 @@
-package com.example.nyarticles.framework.presentaion
+package com.example.nyarticles.framework.presentaion.articlelist
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.LiveData
@@ -6,7 +6,6 @@ import androidx.lifecycle.Observer
 import com.example.nyarticles.business.entites.ArticleDomainModel
 import com.example.nyarticles.business.entites.Resource.*
 import com.example.nyarticles.business.usecases.abstraction.GetArtcileListUseCase
-import com.example.nyarticles.framework.presentaion.articlelist.ArticleListViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow

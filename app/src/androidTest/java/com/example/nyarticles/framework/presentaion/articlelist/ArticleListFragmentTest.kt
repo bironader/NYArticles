@@ -36,6 +36,7 @@ class ArticleListFragmentTest {
             .check(matches(isDisplayed()))
         onView(withId(R.id.swipeRef)).check(matches(isRefreshing()))
         onView(withId(R.id.articlesList)).check(matches((isDisplayed())))
-        Thread.sleep(1000)
+        Thread.sleep(2000)
+
     }
 }
